@@ -1,20 +1,4 @@
-﻿.DNN_News_ItemLink 
-{
- font-size: larger;
- font-weight: bold;
- margin-bottom: 0px;
-}
-.DNN_News_ItemDate 
-{
- font-style: italic;
- margin: 0px;
-}
-.DNN_News_ItemDetails 
-{
- margin: 0px;
-}
-p.rssLine
-{
- width: 100%;
- text-align: right;
-}
+.DNN_News_ItemLink{margin-bottom:0;}
+.DNN_News_ItemDate{font-size:smaller;font-style:italic;margin:0;}
+.DNN_News_ItemDetails{margin:0;}
+p.rssLine{width:100%;text-align:right;}
