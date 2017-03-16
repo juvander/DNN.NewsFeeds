@@ -245,8 +245,8 @@ Namespace Controls
   ''' </history>
   Protected Function GetMappedPath(ByVal localPath As String) As String
    If Not (HttpContext.Current Is Nothing) Then
-    Return PortalController.GetCurrentPortalSettings().HomeDirectoryMapPath + localPath
-   Else
+                Return PortalController.Instance.GetCurrentPortalSettings().HomeDirectoryMapPath + localPath
+            Else
     Return CStr(System.Threading.Thread.GetDomain.GetData(".appPath")) & New PortalController().GetPortal(PortalId).HomeDirectory & "\" & localPath
    End If
   End Function

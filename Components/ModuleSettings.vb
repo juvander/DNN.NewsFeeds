@@ -19,7 +19,7 @@
 '
 
 Imports System.Xml.Xsl
-
+Imports DotNetNuke.Entities.Modules
 
 ''' <summary>
 ''' Settings class for module
@@ -50,7 +50,10 @@ Public Class ModuleSettings
     Public Sub New(ByVal ModuleId As Integer)
 
         _moduleId = ModuleId
-        _settings = (New DotNetNuke.Entities.Modules.ModuleController).GetModuleSettings(ModuleId)
+
+        Dim objModules As New DotNetNuke.Entities.Modules.ModuleController
+        Dim objmodule As ModuleInfo = objModules.GetModule(ModuleId)
+        _settings = objmodule.ModuleSettings
 
         _settings.ReadValue("DefaultCacheTime", DefaultCacheTime)
         _settings.ReadValue("XslUrl", XslUrl)

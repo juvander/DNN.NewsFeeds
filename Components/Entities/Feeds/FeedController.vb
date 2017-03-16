@@ -47,9 +47,9 @@ Namespace Entities.Feeds
   ''' </history>
   Public Shared Function GetFeed(ByVal FeedID As Integer, ByVal ModuleId As Integer) As FeedInfo
 
-   Return CType(DotNetNuke.Common.Utilities.CBO.FillObject(DataProvider.Instance().GetFeed(FeedID, ModuleId), GetType(FeedInfo)), FeedInfo)
+            Return DotNetNuke.Common.Utilities.CBO.FillObject(Of FeedInfo)(DataProvider.Instance().GetFeed(FeedID, ModuleId))
 
-  End Function
+        End Function
 
   ''' <summary>
   ''' Get expired feeds for this module

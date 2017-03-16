@@ -57,9 +57,10 @@ Public Class NewsController
 
   sb.Append("<News><Settings>")
   Dim moduleSettings As Hashtable
-  Dim objModules As New DotNetNuke.Entities.Modules.ModuleController
-  moduleSettings = objModules.GetModuleSettings(ModuleID)
-  For Each name As String In moduleSettings.Keys
+        Dim objModules As New DotNetNuke.Entities.Modules.ModuleController
+        Dim objmodule As ModuleInfo = objModules.GetModule(ModuleID)
+        moduleSettings = objmodule.ModuleSettings
+        For Each name As String In moduleSettings.Keys
    sb.Append("<Setting Name=""" + name + """>")
    sb.Append("<Value>" + XMLEncode(moduleSettings(name).ToString) + "</Value>")
    sb.Append("</Setting>")
